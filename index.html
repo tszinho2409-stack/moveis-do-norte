@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Móveis do Norte | Mobiliário por Medida</title>
+  <meta name="description" content="Móveis do Norte — mobiliário por medida, cozinhas, quartos, salas e escritórios. Fabrico próprio e montagem profissional.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5f1ea;
+      --dark: #171614;
+      --dark-2: #24211d;
+      --gold: #b38a4c;
+      --gold-light: #d4b477;
+      --white: #fff;
+      --muted: #777168;
+      --border: rgba(23,22,20,.12);
+      --radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1160px, 92%);
+      z-index: 1000;
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 18px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.08);
+    }
+
+    .nav {
+      height: 72px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      background: var(--dark);
+      color: white;
+      padding: 12px 19px;
+      border-radius: 12px;
+    }
+
+    .nav-cta:hover {
+      color: white !important;
+      background: var(--gold);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(12,10,8,.84), rgba(12,10,8,.42), rgba(12,10,8,.18)),
+        url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2000&q=90")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      padding-top: 80px;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(52px, 7vw, 92px);
+      line-height: .98;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: rgba(255,255,255,.82);
+      font-size: 18px;
+      margin-bottom: 36px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 23px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: .25s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--dark);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.35);
+      color: white;
+      background: rgba(255,255,255,.08);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.18);
+    }
+
+    .hero-stats {
+      margin-top: 65px;
+      display: flex;
+      gap: 45px;
+      flex-wrap: wrap;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 27px;
+    }
+
+    .stat span {
+      color: rgba(255,255,255,.65);
+      font-size: 13px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-header {
+      max-width: 680px;
+      margin-bottom: 55px;
+    }
+
+    .section-header .eyebrow {
+      color: var(--gold);
+    }
+
+    .section-header h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 620px;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .about-image img {
+      height: 100%;
+    }
+
+    .about-text h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 38px;
+      margin-bottom: 22px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 28px;
+    }
+
+    .check-list li {
+      margin: 13px 0;
+      font-weight: 600;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--gold);
+      margin-right: 10px;
+      font-weight: 800;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: var(--dark);
+      color: white;
+    }
+
+    .services .section-header p {
+      color: #aaa49c;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      min-height: 300px;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.035);
+      transition: .3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .service:hover {
+      transform: translateY(-7px);
+      border-color: rgba(212,180,119,.45);
+      background: rgba(255,255,255,.06);
+    }
+
+    .service-number {
+      color: var(--gold-light);
+      font-size: 13px;
+      margin-bottom: auto;
+    }
+
+    .service h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: #aaa49c;
+      font-size: 14px;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .category {
+      position: relative;
+      height: 230px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .category img {
+      height: 100%;
+      transition: .5s;
+    }
+
+    .category:hover img {
+      transform: scale(1.07);
+    }
+
+    .category::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 30%, rgba(0,0,0,.75));
+    }
+
+    .category span {
+      position: absolute;
+      bottom: 22px;
+      left: 22px;
+      color: white;
+      z-index: 2;
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+    }
+
+    /* PRODUCTS */
+
+    .products {
+      background: #eee9e1;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,.08);
+    }
+
+    .product img {
+      height: 270px;
+    }
+
+    .product-info {
+      padding: 23px;
+    }
+
+    .product-info small {
+      color: var(--gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .product-info h3 {
+      margin-top: 5px;
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .project {
+      height: 420px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+    }
+
+    .project:first-child {
+      height: 560px;
+      grid-row: span 2;
+    }
+
+    .project img {
+      height: 100%;
+      transition: .5s;
+    }
+
+    .project:hover img {
+      transform: scale(1.05);
+    }
+
+    .project::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 45%, rgba(0,0,0,.7));
+    }
+
+    .project-info {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      z-index: 2;
+      color: white;
+    }
+
+    .project-info h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonials {
+      background: white;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .testimonial {
+      padding: 32px;
+      background: var(--bg);
+      border-radius: 22px;
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial p {
+      color: #5f5a53;
+      margin-bottom: 25px;
+    }
+
+    .testimonial strong {
+      display: block;
+    }
+
+    .testimonial span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    details {
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    details p {
+      padding-top: 15px;
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: var(--dark);
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .contact h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 5vw, 65px);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .contact-intro {
+      color: #aaa49c;
+      margin-bottom: 35px;
+    }
+
+    .contact-item {
+      margin: 20px 0;
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 3px;
+    }
+
+    .contact-form {
+      background: white;
+      color: var(--dark);
+      padding: 35px;
+      border-radius: 24px;
+    }
+
+    .contact-form h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    .field {
+      margin-bottom: 15px;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      border: 1px solid #ddd8d0;
+      background: #faf9f7;
+      padding: 15px;
+      border-radius: 10px;
+      font: inherit;
+      outline: none;
+    }
+
+    .field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-button {
+      width: 100%;
+      border: 0;
+      cursor: pointer;
+      background: var(--dark);
+      color: white;
+      padding: 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .form-button:hover {
+      background: var(--gold);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #0f0e0d;
+      color: #aaa49c;
+      padding: 35px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      color: white;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      transition: .25s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 900px) {
+
+      .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 25px;
+        border-radius: 18px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .categories {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .project:first-child {
+        height: 420px;
+        grid-row: auto;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width: 600px) {
+
+      section {
+        padding: 80px 0;
+      }
+
+      .hero {
+        min-height: 850px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-stats {
+        gap: 25px;
+      }
+
+      .services-grid,
+      .categories,
+      .product-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        height: 430px;
+      }
+
+      .project,
+      .project:first-child {
+        height: 350px;
+      }
+
+      .contact-form {
+        padding: 24px;
+      }
+
+      .nav {
+        padding: 0 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+
+    <a href="#inicio" class="logo">
+      MÓVEIS <span>DO NORTE</span>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#sobre">Quem Somos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="nav-cta">Pedir Orçamento</a>
+    </div>
+
+  </nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Desde 1987 · Fabrico Próprio
+      </div>
+
+      <h1>
+        Mobiliário que<br>
+        transforma <span>espaços.</span>
+      </h1>
+
+      <p>
+        Criamos cozinhas, quartos, salas e escritórios por medida,
+        combinando design, qualidade e fabrico próprio para criar
+        espaços verdadeiramente seus.
+      </p>
+
+      <div class="buttons">
+        <a href="#contacto" class="btn btn-primary">
+          Pedir orçamento
+        </a>
+
+        <a href="#projetos" class="btn btn-outline">
+          Ver projetos
+        </a>
+      </div>
+
+      <div class="hero-stats">
+
+        <div class="stat">
+          <strong>39+</strong>
+          <span>Anos de experiência</span>
+        </div>
+
+        <div class="stat">
+          <strong>2500+</strong>
+          <span>Projetos realizados</span>
+        </div>
+
+        <div class="stat">
+          <strong>100%</strong>
+          <span>Por medida</span>
+        </div>
+
+        <div class="stat">
+          <strong>5★</strong>
+          <span>Clientes satisfeitos</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SOBRE -->
+
+<section id="sobre">
+
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div class="about-image">
+        <img
+          src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85"
+          alt="Interior moderno"
+        >
+      </div>
+
+      <div class="about-text">
+
+        <div class="eyebrow">
+          Quem somos
+        </div>
+
+        <h3>
+          Mais de três décadas a criar mobiliário com identidade.
+        </h3>
+
+        <p>
+          A Móveis do Norte dedica-se ao fabrico e comercialização
+          de mobiliário em Portugal, com soluções pensadas para
+          cada espaço e para cada cliente.
+        </p>
+
+        <p>
+          Dispomos de fabrico próprio e trabalhamos com diferentes
+          materiais, acabamentos e estilos, desde ambientes modernos
+          até soluções mais clássicas.
+        </p>
+
+        <ul class="check-list">
+          <li>Fabrico próprio</li>
+          <li>Mobiliário totalmente personalizado</li>
+          <li>Montagem profissional</li>
+          <li>Entregas em todo o país</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVIÇOS -->
+
+<section class="services" id="servicos">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="eyebrow">
+        O que fazemos
+      </div>
+
+      <h2>
+        Pensado ao detalhe.<br>
+        Feito para si.
+      </h2>
+
+      <p>
+        Desenvolvemos soluções à medida para transformar cada
+        divisão numa extensão da sua personalidade.
+      </p>
+
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service">
+        <div class="service-number">01</div>
+        <h3>Cozinhas</h3>
+        <p>
+          Cozinhas personalizadas, funcionais e desenhadas
+          para aproveitar cada centímetro.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">02</div>
+        <h3>Quartos</h3>
+        <p>
+          Roupeiros, camas e soluções de arrumação
+          adaptadas ao seu espaço.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">03</div>
+        <h3>Salas</h3>
+        <p>
+          Móveis de TV, estantes, aparadores e soluções
+          pensadas para ambientes sofisticados.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">04</div>
+        <h3>Escritórios</h3>
+        <p>
+          Espaços de trabalho confortáveis, elegantes
+          e adaptados às suas necessidades.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CATEGORIAS -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="eyebrow">
+        Coleções
+      </div>
+
+      <h2>
+        Para cada espaço,<br>
+        uma solução.
+      </h2>
+
+    </div>
+
+    <div class="categories">
+
+      <a class="category" href="#produtos">
+        <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=900&q=80">
+        <span>Sala</span>
+      </a>
+
+      <a class="category" href="#produtos">
+        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=900&q=80">
+        <span>Quarto</span>
+      </a>
+
+      <a class="category" href="#produtos">
+        <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=900&q=80">
+        <span>Cozinha</span>
+      </a>
+
+      <a class="category" href="#produtos">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80">
+        <span>Escritório</span>
+      </a>
+
+      <a class="category" href="#produtos">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=80">
+        <span>WC</span>
+      </a>
+
+      <a class="category" href="#produtos">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80">
+        <span>Decoração</span>
+      </a>
+
+      <a class="category" href="#produtos">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80">
+        <span>Hall</span>
+      </a>
+
+      <a class="category" href="#produtos">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80">
+        <span>Exterior</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUTOS -->
+
+<section class="products" id="produtos">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="eyebrow">
+        Produtos em destaque
+      </div>
+
+      <h2>
+        Design que combina<br>
+        com a sua casa.
+      </h2>
+
+      <p>
+        Algumas das nossas peças e soluções mais procuradas.
+      </p>
+
+    </div>
+
+    <div class="product-grid">
+
+      <article class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1000&q=85"
+          alt="Sala de estar"
+        >
+
+        <div class="product-info">
+          <small>Sala</small>
+          <h3>Consola Ozzo</h3>
+        </div>
+
+      </article>
+
+      <article class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1550226891-ef816aed4a98?auto=format&fit=crop&w=1000&q=85"
+          alt="Quarto"
+        >
+
+        <div class="product-info">
+          <small>Quarto</small>
+          <h3>Quarto Spot</h3>
+        </div>
+
+      </article>
+
+      <article class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=1000&q=85"
+          alt="Cozinha moderna"
+        >
+
+        <div class="product-info">
+          <small>Cozinha</small>
+          <h3>Cozinha Vilamoura</h3>
+        </div>
+
+      </article>
+
+      <article class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1000&q=85"
+          alt="Mobiliário"
+        >
+
+        <div class="product-info">
+          <small>Sala</small>
+          <h3>Aparador Ozzo</h3>
+        </div>
+
+      </article>
+
+      <article class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1000&q=85"
+          alt="Sala moderna"
+        >
+
+        <div class="product-info">
+          <small>Sala</small>
+          <h3>Móvel de TV Amora</h3>
+        </div>
+
+      </article>
+
+      <article class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?auto=format&fit=crop&w=1000&q=85"
+          alt="Quarto moderno"
+        >
+
+        <div class="product-info">
+          <small>Quarto</small>
+          <h3>Beliche Kazz</h3>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROJETOS -->
+
+<section id="projetos">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="eyebrow">
+        Projetos realizados
+      </div>
+
+      <h2>
+        Espaços reais.<br>
+        Resultados únicos.
+      </h2>
+
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85"
+          alt="Projeto Lisboa"
+        >
+
+        <div class="project-info">
+          <h3>Projeto Lisboa</h3>
+          <span>Mobiliário personalizado</span>
+        </div>
+
+      </div>
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85"
+          alt="Projeto Porto"
+        >
+
+        <div class="project-info">
+          <h3>Projeto Porto</h3>
+        </div>
+
+      </div>
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85"
+          alt="Projeto Braga"
+        >
+
+        <div class="project-info">
+          <h3>Projeto Braga</h3>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TESTEMUNHOS -->
+
+<section class="testimonials">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="eyebrow">
+        Clientes
+      </div>
+
+      <h2>
+        A opinião de quem<br>
+        já nos escolheu.
+      </h2>
+
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial">
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+          "Gostei muito da variedade de estilos. Encontrámos
+          exatamente o que procurávamos e a qualidade surpreendeu-nos."
+        </p>
+
+        <strong>Cleverson Vieira</strong>
+        <span>Lisboa</span>
+
+      </div>
+
+      <div class="testimonial">
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+          "Ficámos muito satisfeitos com os móveis para o quarto
+          e sala. O serviço e a entrega foram excelentes."
+        </p>
+
+        <strong>Jorge Herrera</strong>
+        <span>Espanha</span>
+
+      </div>
+
+      <div class="testimonial">
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+          "Excelente atendimento, qualidade dos produtos e uma
+          equipa sempre disponível para ajudar."
+        </p>
+
+        <strong>Lurdes Vale</strong>
+        <span>Cascais</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-header" style="margin:auto auto 45px; text-align:center;">
+
+      <div class="eyebrow">
+        FAQ
+      </div>
+
+      <h2>
+        Perguntas frequentes
+      </h2>
+
+    </div>
+
+    <div class="faq">
+
+      <details>
+        <summary>Fazem móveis por medida?</summary>
+        <p>
+          Sim. Desenvolvemos soluções personalizadas de acordo
+          com as dimensões, necessidades e estilo de cada cliente.
+        </p>
+      </details>
+
+      <details>
+        <summary>Fazem entrega e montagem?</summary>
+        <p>
+          Sim. Disponibilizamos serviço de entrega e montagem
+          profissional.
+        </p>
+      </details>
+
+      <details>
+        <summary>Qual é o prazo habitual?</summary>
+        <p>
+          O prazo habitual situa-se entre 3 e 8 semanas,
+          dependendo do projeto e da solução escolhida.
+        </p>
+      </details>
+
+      <details>
+        <summary>Fazem entregas em todo o país?</summary>
+        <p>
+          Sim. Realizamos entregas em diferentes zonas de Portugal.
+        </p>
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACTO -->
+
+<section class="contact" id="contacto">
+
+  <div class="container">
+
+    <div class="contact-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          Vamos criar algo único
+        </div>
+
+        <h2>
+          O seu próximo projeto começa aqui.
+        </h2>
+
+        <p class="contact-intro">
+          Fale connosco e conte-nos o que tem em mente.
+          Teremos todo o gosto em apresentar uma solução
+          personalizada para o seu espaço.
+        </p>
+
+        <div class="contact-item">
+          <small>Morada</small>
+          <span>R. das Saloias 1, 2665-258 Malveira</span>
+        </div>
+
+        <div class="contact-item">
+          <small>Telefone</small>
+          <a href="tel:+351919743116">
+            +351 919 743 116
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <small>Email</small>
+          <a href="mailto:geral@moveisdonorte.com">
+            geral@moveisdonorte.com
+          </a>
+        </div>
+
+      </div>
+
+
+      <form class="contact-form" onsubmit="enviarWhatsApp(event)">
+
+        <h3>
+          Peça o seu orçamento
+        </h3>
+
+        <div class="field">
+          <input
+            type="text"
+            id="nome"
+            placeholder="Nome"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <input
+            type="tel"
+            id="telefone"
+            placeholder="Telefone"
+            required
+          >
+        </div>
+
+        <div class="field">
+
+          <select id="tipo" required>
+
+            <option value="">
+              Tipo de projeto
+            </option>
+
+            <option>
+              Cozinha
+            </option>
+
+            <option>
+              Quarto
+            </option>
+
+            <option>
+              Sala
+            </option>
+
+            <option>
+              Escritório
+            </option>
+
+            <option>
+              Outro
+            </option>
+
+          </select>
+
+        </div>
+
+        <div class="field">
+
+          <textarea
+            id="mensagem"
+            placeholder="Conte-nos um pouco sobre o seu projeto..."
+            required
+          ></textarea>
+
+        </div>
+
+        <button class="form-button" type="submit">
+          Enviar pedido pelo WhatsApp
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-inner">
+
+      <div>
+        <div class="footer-logo">
+          MÓVEIS DO NORTE
+        </div>
+
+        <small>
+          Mobiliário por medida desde 1987.
+        </small>
+      </div>
+
+      <div>
+        © 2026 Móveis do Norte · Todos os direitos reservados
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/351919743116"
+  target="_blank"
+  aria-label="WhatsApp"
+>
+  ☎
+</a>
+
+
+<script>
+
+  function toggleMenu() {
+
+    const menu = document.getElementById("navLinks");
+
+    menu.classList.toggle("active");
+
+  }
+
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      document
+        .getElementById("navLinks")
+        .classList.remove("active");
+
+    });
+
+  });
+
+
+  function enviarWhatsApp(event) {
+
+    event.preventDefault();
+
+    const nome =
+      document.getElementById("nome").value;
+
+    const telefone =
+      document.getElementById("telefone").value;
+
+    const tipo =
+      document.getElementById("tipo").value;
+
+    const mensagem =
+      document.getElementById("mensagem").value;
+
+
+    const texto =
+      `Olá, gostaria de pedir um orçamento.%0A%0A` +
+      `Nome: ${nome}%0A` +
+      `Telefone: ${telefone}%0A` +
+      `Projeto: ${tipo}%0A` +
+      `Mensagem: ${mensagem}`;
+
+
+    window.open(
+      `https://wa.me/351919743116?text=${texto}`,
+      "_blank"
+    );
+
+  }
+
+</script>
+
+</body>
+</html>
